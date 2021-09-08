@@ -1,11 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import addNotification from "react-push-notification";
 
 function App() {
+  const onClick = () => {
+    addNotification({
+      title: "Warning",
+      subtitle: "This is a subtitle",
+      message: "This is a very long message",
+      native: true, // when using native, your OS will handle theming.
+    });
+  };
+
   return (
     <div className="App">
+      <button onClick={onClick}>Trigger notification</button>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
